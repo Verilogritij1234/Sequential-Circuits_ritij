@@ -1,2 +1,2 @@
 # Sequential Circuits
-it conains various sequential blocks
+it contains various sequential blocks
