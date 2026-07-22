@@ -1,0 +1,127 @@
+{
+  "creator": "Yosys 0.61+56 (git sha1 a6fc69552, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)",
+  "modules": {
+    "gray_encoder": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "4_bit_gray_encoder.v:1.1-10.10"
+      },
+      "ports": {
+        "bin_in": {
+          "direction": "input",
+          "bits": [ 2, 3, 4, 5 ]
+        },
+        "gray_out": {
+          "direction": "output",
+          "bits": [ 6, 7, 8, 5 ]
+        }
+      },
+      "cells": {
+        "$abc$86$auto$blifparse.cc:397:parse_blif$87": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__xor2_1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 4 ],
+            "B": [ 5 ],
+            "X": [ 8 ]
+          }
+        },
+        "$abc$86$auto$blifparse.cc:397:parse_blif$88": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__xor2_1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 4 ],
+            "B": [ 3 ],
+            "X": [ 7 ]
+          }
+        },
+        "$abc$86$auto$blifparse.cc:397:parse_blif$89": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__xor2_1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 2 ],
+            "X": [ 6 ]
+          }
+        }
+      },
+      "netnames": {
+        "$abc$86$bin_in[0]": {
+          "hide_name": 1,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "4_bit_gray_encoder.v:2.12-2.18"
+          }
+        },
+        "$abc$86$bin_in[1]": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "4_bit_gray_encoder.v:2.12-2.18"
+          }
+        },
+        "$abc$86$bin_in[2]": {
+          "hide_name": 1,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "4_bit_gray_encoder.v:2.12-2.18"
+          }
+        },
+        "$abc$86$bin_in[3]": {
+          "hide_name": 1,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "4_bit_gray_encoder.v:2.12-2.18"
+          }
+        },
+        "$abc$86$gray_out[0]": {
+          "hide_name": 1,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "4_bit_gray_encoder.v:3.13-3.21"
+          }
+        },
+        "$abc$86$gray_out[1]": {
+          "hide_name": 1,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "4_bit_gray_encoder.v:3.13-3.21"
+          }
+        },
+        "$abc$86$gray_out[2]": {
+          "hide_name": 1,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "4_bit_gray_encoder.v:3.13-3.21"
+          }
+        },
+        "bin_in": {
+          "hide_name": 0,
+          "bits": [ 2, 3, 4, 5 ],
+          "attributes": {
+            "src": "4_bit_gray_encoder.v:2.12-2.18"
+          }
+        },
+        "gray_out": {
+          "hide_name": 0,
+          "bits": [ 6, 7, 8, 5 ],
+          "attributes": {
+            "src": "4_bit_gray_encoder.v:3.13-3.21"
+          }
+        }
+      }
+    }
+  }
+}

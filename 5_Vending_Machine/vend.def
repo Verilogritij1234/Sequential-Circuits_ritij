@@ -1,0 +1,84 @@
+VERSION 5.8 ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN vending_machine ;
+UNITS DISTANCE MICRONS 1000 ;
+DIEAREA ( 0 0 ) ( 1000000 1000000 ) ;
+TRACKS X 230 DO 2174 STEP 460 LAYER li1 ;
+TRACKS Y 170 DO 2941 STEP 340 LAYER li1 ;
+TRACKS X 170 DO 2941 STEP 340 LAYER met1 ;
+TRACKS Y 170 DO 2941 STEP 340 LAYER met1 ;
+TRACKS X 230 DO 2174 STEP 460 LAYER met2 ;
+TRACKS Y 230 DO 2174 STEP 460 LAYER met2 ;
+TRACKS X 340 DO 1470 STEP 680 LAYER met3 ;
+TRACKS Y 340 DO 1470 STEP 680 LAYER met3 ;
+TRACKS X 460 DO 1087 STEP 920 LAYER met4 ;
+TRACKS Y 460 DO 1087 STEP 920 LAYER met4 ;
+TRACKS X 1700 DO 294 STEP 3400 LAYER met5 ;
+TRACKS Y 1700 DO 294 STEP 3400 LAYER met5 ;
+GCELLGRID X 0 DO 144 STEP 6900 ;
+GCELLGRID Y 0 DO 144 STEP 6900 ;
+COMPONENTS 16 ;
+    - _40_ sky130_fd_sc_hd__lpflow_isobufsrc_1 ;
+    - _41_ sky130_fd_sc_hd__nor3b_1 ;
+    - _42_ sky130_fd_sc_hd__lpflow_isobufsrc_1 ;
+    - _43_ sky130_fd_sc_hd__nor3b_1 ;
+    - _44_ sky130_fd_sc_hd__nor2_1 ;
+    - _45_ sky130_fd_sc_hd__a21oi_1 ;
+    - _46_ sky130_fd_sc_hd__nor2_1 ;
+    - _47_ sky130_fd_sc_hd__nor3_1 ;
+    - _48_ sky130_fd_sc_hd__a22o_1 ;
+    - _49_ sky130_fd_sc_hd__a22o_1 ;
+    - _50_ sky130_fd_sc_hd__a21o_1 ;
+    - _51_ sky130_fd_sc_hd__a211o_1 ;
+    - _52_ sky130_fd_sc_hd__dfxtp_1 ;
+    - _53_ sky130_fd_sc_hd__dfxtp_1 ;
+    - _54_ sky130_fd_sc_hd__dfxtp_1 ;
+    - _55_ sky130_fd_sc_hd__dfxtp_1 ;
+END COMPONENTS
+PINS 5 ;
+    - clock + NET clock + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met1 ( -297 -70 ) ( 298 70 )
+        + PLACED ( 297 499290 ) N ;
+    - coin[0] + NET coin[0] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met1 ( -297 -70 ) ( 298 70 )
+        + PLACED ( 297 500650 ) N ;
+    - coin[1] + NET coin[1] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met1 ( -297 -70 ) ( 298 70 )
+        + PLACED ( 297 501330 ) N ;
+    - newspaper + NET PRESENT_STATE[3] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met1 ( -297 -70 ) ( 298 70 )
+        + PLACED ( 297 498610 ) N ;
+    - reset + NET reset + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met1 ( -297 -70 ) ( 298 70 )
+        + PLACED ( 297 499970 ) N ;
+END PINS
+NETS 21 ;
+    - PRESENT_STATE[0] ( _52_ Q ) ( _51_ A1 ) ( _49_ A1 ) ( _48_ A1 ) + USE SIGNAL ;
+    - PRESENT_STATE[1] ( _53_ Q ) ( _50_ A1 ) ( _45_ A1 ) ( _44_ B ) + USE SIGNAL ;
+    - PRESENT_STATE[2] ( _54_ Q ) ( _49_ B2 ) ( _48_ B2 ) ( _44_ A ) + USE SIGNAL ;
+    - PRESENT_STATE[3] ( PIN newspaper ) ( _55_ Q ) ( _51_ B1 ) + USE SIGNAL ;
+    - _25_ ( _52_ D ) ( _51_ X ) + USE SIGNAL ;
+    - _26_ ( _53_ D ) ( _50_ X ) + USE SIGNAL ;
+    - _27_ ( _54_ D ) ( _48_ X ) + USE SIGNAL ;
+    - _28_ ( _55_ D ) ( _46_ Y ) + USE SIGNAL ;
+    - _31_ ( _47_ B ) ( _40_ X ) + USE SIGNAL ;
+    - _32_ ( _49_ A2 ) ( _45_ B1 ) ( _41_ Y ) + USE SIGNAL ;
+    - _33_ ( _47_ C ) ( _42_ X ) + USE SIGNAL ;
+    - _34_ ( _49_ B1 ) ( _48_ A2 ) ( _45_ A2 ) ( _43_ Y ) + USE SIGNAL ;
+    - _35_ ( _46_ A ) ( _44_ Y ) + USE SIGNAL ;
+    - _36_ ( _46_ B ) ( _45_ Y ) + USE SIGNAL ;
+    - _37_ ( _51_ A2 ) ( _50_ A2 ) ( _48_ B1 ) ( _47_ Y ) + USE SIGNAL ;
+    - _38_ ( _50_ B1 ) ( _49_ X ) + USE SIGNAL ;
+    - clock ( PIN clock ) ( _55_ CLK ) ( _54_ CLK ) ( _53_ CLK ) ( _52_ CLK ) + USE SIGNAL ;
+    - coin[0] ( PIN coin[0] ) ( _43_ C_N ) ( _42_ A ) ( _41_ B ) ( _40_ SLEEP ) + USE SIGNAL ;
+    - coin[1] ( PIN coin[1] ) ( _43_ B ) ( _42_ SLEEP ) ( _41_ C_N ) ( _40_ A ) + USE SIGNAL ;
+    - reset ( PIN reset ) ( _51_ C1 ) ( _47_ A ) ( _43_ A ) ( _41_ A ) + USE SIGNAL ;
+    - zero_ + USE GROUND ;
+END NETS
+END DESIGN
